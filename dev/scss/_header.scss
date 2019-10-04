@@ -1,0 +1,10 @@
+header {
+  background-color: $headerColor;
+  font-size: 20px;
+
+  .container {
+    height: 100%;
+    padding: $freeSpace;
+    text-align: center;
+  }
+}

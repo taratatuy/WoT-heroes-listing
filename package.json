@@ -1,0 +1,17 @@
+{
+  "name": "WoT_Heroes",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "gulp"
+  },
+  "author": "WriteBot",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.0",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-sass": "^4.0.2"
+  }
+}
