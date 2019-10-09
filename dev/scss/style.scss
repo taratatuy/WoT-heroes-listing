@@ -1,24 +1,11 @@
-$footerHeight: 50px;
 $freeSpace: 15px;
 
 /* Color Theme Swatches in Hex */
-$backroundColor: #f2f2f2;
+$backgroundColor: #f2f2f2;
 $headerColor: #d9d9d9;
 
-@import 'reset';
-
-html {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-  font-family: 'Times New Roman', Times, serif;
-}
-
 body {
-  display: flex;
-  flex-direction: column;
-  flex: auto;
-  background-color: $backroundColor;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 @import 'header';

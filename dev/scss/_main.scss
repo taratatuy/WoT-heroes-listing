@@ -1,8 +1,40 @@
-@keyframes anim {
+$sidebarHidden: 55px;
+$sidebarShown: 225px;
+
+@keyframes hideSideBar {
+  0% {
+    width: $sidebarShown;
+  }
+  100% {
+    width: $sidebarHidden;
+  }
+}
+
+@keyframes showSideBar {
+  0% {
+    width: $sidebarHidden;
+  }
+  100% {
+    width: $sidebarShown;
+  }
+}
+
+@keyframes hideText {
+  0%,
+  70% {
+    visibility: collapse;
+    position: absolute;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+@keyframes selectName {
   0%,
   100% {
     color: black;
-    background: $backroundColor;
+    background: white;
   }
   25% {
     color: red;
@@ -10,106 +42,107 @@
   }
 }
 
-main {
-  display: flex;
-  flex-direction: row;
-  flex-grow: 1;
+main > .container-fluid {
+  padding-right: 0;
+}
 
-  aside {
-    position: fixed;
-    width: 225px;
-    padding-left: $freeSpace;
-    max-height: 68%;
-    overflow: auto;
+aside {
+  //   animation: showSideBar 0.3s ease;
+  width: $sidebarShown;
 
-    nav {
-      $lineHight: 1.6;
-      display: block;
-      width: 100%;
-      border-top: 1px solid $headerColor;
+  .bookName {
+    // animation: hideText 0.3s ease;
+  }
 
-      section {
-        display: inline-block;
-        width: 100%;
-      }
-
-      a {
-        display: inline-block;
-        line-height: $lineHight;
-        width: 100%;
-        color: black;
-        text-decoration: none;
-        border-bottom: 1px solid $headerColor;
-        padding: 2px;
-
-        span {
-          display: inline-block;
-          line-height: $lineHight;
-        }
-
-        .bookNum {
-          padding-right: 4px;
-          text-align: end;
-          width: 28px;
-        }
-
-        .bookName {
-          position: absolute;
-        }
-      }
-
-      .active {
-        background-color: $headerColor;
-      }
-
-      a:hover {
-        background-color: $headerColor;
-      }
+  button {
+    &:hover {
+      background-color: $headerColor;
+      color: black;
+    }
+    &:focus {
+      outline: none;
     }
   }
 
-  .content {
-    border-left: 1px solid $headerColor;
-    margin-left: 225px;
-    padding: $freeSpace;
-    padding-left: $freeSpace * 3 + 4px;
-    text-align: justify;
+  a {
+    color: black;
+    border-bottom: 1px solid $headerColor;
 
-    h2 {
-      margin-top: 18px;
-      margin-bottom: 2px;
-      padding: 4px;
-      padding-left: 8px;
+    &:hover {
+      background-color: $headerColor;
+      color: black;
+    }
+
+    &.active {
       background-color: $headerColor;
     }
 
-    h3 {
-      border-bottom: 1px solid $headerColor;
-      margin-top: 16px;
-      margin-bottom: 6px;
+    &.unactive {
+      background-color: white;
+    }
+  }
+}
+
+.isHidden {
+  aside {
+    // animation: hideSideBar 0.3s ease;
+    width: $sidebarHidden;
+
+    .bookName {
+      display: none;
     }
 
-    li {
-      .name {
-        font-weight: bold;
-        font-size: 18px;
-      }
+    .bookNum {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
 
-      .name:target {
-        animation: anim 1s;
-      }
+.content {
+  border-left: 1px solid $headerColor;
+  line-height: 1.25;
+  padding: 0;
 
-      padding-left: $freeSpace;
-      margin: 8px 0;
+  h2 {
+    font-size: 24px;
+    margin-top: 20px;
+    font-weight: bold;
+    margin-bottom: 2px;
+    padding: 4px;
+    padding-left: 8px;
+    background-color: $headerColor;
+  }
 
-      a:visited {
-        color: blue;
-      }
+  h3 {
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 1px solid $headerColor;
+    margin-top: 16px;
+    margin-bottom: 6px;
+  }
 
-      a:not(.name):hover {
-        color: chocolate;
-        text-decoration: none;
-      }
+  ol {
+    padding-left: 44px;
+  }
+
+  li {
+    .name {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .name:target {
+      animation: selectName 1s;
+    }
+
+    padding-left: $freeSpace;
+    margin: 8px 0;
+
+    a:not(.name):hover {
+      color: chocolate;
+      text-decoration: none;
     }
   }
 }
