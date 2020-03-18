@@ -1,0 +1,72 @@
+aside {
+  animation: showSideBar 0.15s ease;
+
+  .bookName {
+    animation: showBookName 0.16s ease;
+  }
+
+  display: flex;
+  flex-direction: column;
+
+  position: fixed;
+  background-color: white;
+  width: $sidebarShown;
+  height: 100vh;
+  overflow-y: auto;
+  border-right: 1px solid $linesColor;
+
+  #myButton {
+    width: 100%;
+    min-height: 45px;
+
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .line {
+    border-bottom: 1px solid $linesColor;
+  }
+
+  a {
+    display: flex;
+
+    padding: 5px 18px;
+    color: black;
+    text-decoration: none;
+    line-height: 2;
+    font-size: 18px;
+
+    border-bottom: 1px solid $linesColor;
+
+    &:hover {
+      background-color: $linesColor;
+      color: black;
+    }
+
+    &.active {
+      background-color: $linesColor;
+    }
+
+    &.unactive {
+      background-color: white;
+    }
+
+    .bookName {
+      padding-left: 3px;
+    }
+  }
+}
+
+.hiddenSideBar {
+  animation: hideSideBar 0.15s ease;
+  width: $sidebarHidden;
+
+  .bookName {
+    display: none;
+  }
+
+  a {
+    animation: justifyA 0.15s ease;
+    justify-content: center;
+  }
+}

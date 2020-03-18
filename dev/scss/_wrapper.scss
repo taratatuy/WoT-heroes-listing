@@ -1,0 +1,58 @@
+.resizableWrapper {
+  margin-left: $sidebarHidden;
+}
+
+.notResizableWrapper {
+  margin-left: $sidebarShown;
+}
+
+#content {
+  text-align: justify;
+  line-height: 1.25;
+  padding: 0 16px;
+
+  h2 {
+    font-size: 24px;
+    margin-top: 20px;
+    font-weight: bold;
+    margin-bottom: 2px;
+    padding: 4px;
+    padding-left: 8px;
+    background-color: $linesColor;
+  }
+
+  h3 {
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 1px solid $linesColor;
+    margin-top: 16px;
+    margin-bottom: 6px;
+  }
+
+  ol {
+    padding-left: 44px;
+  }
+
+  li {
+    .name {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .name:target {
+      animation: selectName 1s;
+    }
+
+    padding-left: 15px;
+    margin: 8px 0;
+
+    a:not(.name) {
+      color: blue;
+      text-decoration: none;
+    }
+
+    a:not(.name):hover {
+      color: chocolate;
+    }
+  }
+}

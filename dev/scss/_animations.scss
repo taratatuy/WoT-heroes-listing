@@ -1,0 +1,56 @@
+@keyframes selectName {
+  0%,
+  100% {
+    color: black;
+    background: white;
+  }
+  25% {
+    color: red;
+    background: red;
+  }
+}
+
+@keyframes hideSideBar {
+  0% {
+    width: $sidebarShown;
+  }
+  100% {
+    width: $sidebarHidden;
+  }
+}
+
+@keyframes justifyA {
+  0% {
+    justify-content: start;
+  }
+  90% {
+    justify-content: start;
+  }
+  100% {
+    justify-content: center;
+  }
+}
+
+@keyframes showSideBar {
+  0% {
+    width: $sidebarHidden;
+  }
+  100% {
+    width: $sidebarShown;
+  }
+}
+
+@keyframes showBookName {
+  0% {
+    position: absolute;
+    visibility: collapse;
+  }
+  99% {
+    position: absolute;
+    visibility: collapse;
+  }
+  100% {
+    position: relative;
+    visibility: visible;
+  }
+}

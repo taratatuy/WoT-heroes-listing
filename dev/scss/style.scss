@@ -1,13 +1,51 @@
 $freeSpace: 15px;
+$sidebarHidden: 55px;
+$sidebarShown: 260px;
+$linesColor: #d9d9d9;
 
-/* Color Theme Swatches in Hex */
-$backgroundColor: #f2f2f2;
-$headerColor: #d9d9d9;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+iframe {
+  display: none;
+}
 
 body {
   font-family: 'Times New Roman', Times, serif;
 }
 
-@import 'header';
-@import 'main';
-@import 'footer';
+header {
+  background-color: $linesColor;
+  font-size: 20px;
+  text-align: center;
+  padding: 8px 0;
+
+  h3 {
+    font-weight: bold;
+    margin-top: 6px;
+    margin-bottom: 0;
+    font-size: 23px;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+footer {
+  background-color: $linesColor;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  p {
+    padding: 3px 12px;
+    margin: 0;
+  }
+}
+
+@import 'animations';
+@import 'aside';
+@import 'wrapper';
