@@ -38,17 +38,17 @@ aside {
 
     border-bottom: 1px solid $linesColor;
 
-    &:hover {
-      background-color: $linesColor;
-      color: black;
-    }
-
     &.active {
       background-color: $linesColor;
     }
 
     &.unactive {
       background-color: white;
+
+      &:hover {
+        background-color: $linesColor;
+        color: black;
+      }
     }
 
     .bookName {
